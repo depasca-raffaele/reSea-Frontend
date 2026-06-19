@@ -11,9 +11,9 @@ import Homepage from './pages/Hompage'
 import ProductDetail from './pages/ProductDetail'
 import NotFound from './pages/NotFound'
 import Wishlist from './pages/Wishlist'
+import Product from './pages/Product'
+
 import { AppProvider } from './Context/AppContext.jsx'
-
-
 
 
 function App() {
@@ -21,7 +21,6 @@ function App() {
 
   return (
     <>
-
       <AppProvider>
         <BrowserRouter>
           <Routes>
