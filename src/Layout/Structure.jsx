@@ -4,28 +4,28 @@ import { Link, Outlet } from "react-router-dom";
 import logo from '../assets/logoneutro.png'
 
 function Structure() {
-    return (
-        <>
-            <nav className="bg-dark" style={{ display: "flex", gap: "1rem", padding: "1rem" }}>
-                <Link to="/Homepage">
-                    <button>Home</button>
-                </Link>
-                <Link to="/ProductDetail">
-                    <button>Prodotti</button>
-                </Link>
-                <Link to="/NotFound">
-                    <button>About</button>
-                </Link>
-            </nav>
+  return (
+    <>
+      <nav className="bg-secondary" style={{ display: "flex", gap: "1rem", padding: "1rem" }}>
+        <Link to="/Homepage" className="nav-link-custom">
+          <button className="nav-btn">Home</button>
+        </Link>
+        <Link to="/ProductDetail" className="nav-link-custom">
+          <button className="nav-btn">Prodotti</button>
+        </Link>
+        <Link to="/NotFound" className="nav-link-custom">
+          <button className="nav-btn">About</button>
+        </Link>
+      </nav>
 
-            <main className="appbg">
-                <Outlet />
-            </main>
+      <main className="appbg">
+        <Outlet />
+      </main>
 
-            <footer className="bg-secondary custom-footer px-4 py-4 mt-auto border-top">
+      <footer className="bg-secondary custom-footer px-4 py-4 mt-auto border-top">
         <div className="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
 
-            <a className="navbar-brand d-flex align-items-center gap-3 text-decoration-none text-dark" href="/">
+          <a className="navbar-brand d-flex align-items-center gap-3 text-decoration-none text-dark" href="/">
             <div className="brand-text">
               <img style={{ width: '200px', borderRadius: '50px' }} src={logo} alt="Logo BB" />
             </div>
@@ -81,8 +81,8 @@ function Structure() {
         </div>
 
       </footer>
-        </>
-    )
+    </>
+  )
 }
 
 export default Structure;
