@@ -4,37 +4,32 @@ import { Link, Outlet } from "react-router-dom";
 import logo from '../assets/logoneutro.png'
 
 function Structure() {
-    return (
-        <>
-            <nav className="bg-dark" style={{ display: "flex", gap: "1rem", padding: "1rem" }}>
-                <Link to="/Homepage">
-                    <button>Home</button>
-                </Link>
-                <Link to="/ProductDetail">
-                    <button>Prodotti</button>
-                </Link>
-                <Link to="/NotFound">
-                    <button>About</button>
-                </Link>
-                <Link to="/Wishlist" className="btn btn-sm bg-white text-white position-relative">
-                    <i className="bi bi-heart-fill text-dark"></i>
-                </Link>
+  return (
+    <>
+      <nav className="bg-secondary" style={{ display: "flex", gap: "1rem", padding: "1rem" }}>
+        <Link to="/Homepage" className="nav-link-custom">
+          <button className="nav-btn">Home</button>
+        </Link>
+        <Link to="/ProductDetail" className="nav-link-custom">
+          <button className="nav-btn">Prodotti</button>
+        </Link>
+        <Link to="/NotFound" className="nav-link-custom">
+          <button className="nav-btn">About</button>
+        </Link>
+      </nav>
 
-            </nav>
+      <main className="appbg">
+        <Outlet />
+      </main>
 
-            <main className="appbg">
-                <Outlet />
-            </main>
+      <footer className="bg-secondary custom-footer px-4 py-4 mt-auto border-top">
+        <div className="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
 
-            <footer className="bg-secondary custom-footer px-4 py-4 mt-auto border-top">
-                <div className="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
-
-                    <a className="navbar-brand d-flex align-items-center gap-3 text-decoration-none text-dark" href="/">
-                        <div className="brand-text">
-                            <img style={{ width: '200px', borderRadius: '50px' }} src={logo} alt="Logo BB" />
-                        </div>
-                    </a>
-
+          <a className="navbar-brand d-flex align-items-center gap-3 text-decoration-none text-dark" href="/">
+            <div className="brand-text">
+              <img style={{ width: '200px', borderRadius: '50px' }} src={logo} alt="Logo BB" />
+            </div>
+          </a>
                     <ul className="nav align-items-center gap-3 flex-wrap justify-content-center">
                         <li className="nav-item">
                             <Link to="/privacy" className="text-decoration-none text-white fw-medium small px-2">
@@ -84,9 +79,11 @@ function Structure() {
                     </div>
                 </div>
 
-            </footer>
-        </>
-    )
+
+      </footer>
+    </>
+  )
+main
 }
 
 export default Structure;
